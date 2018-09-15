@@ -1,0 +1,27 @@
+{
+  "name": "growth-engineering-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonmaungthein/Growth-Engineering-Challenge.git"
+  },
+  "keywords": [
+    "Growth",
+    "Engineering",
+    "Challenge"
+  ],
+  "author": "Won",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wonmaungthein/Growth-Engineering-Challenge/issues"
+  },
+  "homepage": "https://github.com/wonmaungthein/Growth-Engineering-Challenge#readme",
+  "dependencies": {
+    "cypress": "^3.1.0"
+  }
+}
