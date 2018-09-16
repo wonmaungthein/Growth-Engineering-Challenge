@@ -6,6 +6,7 @@
 describe('Main menu', () => {
     describe('Desktop', () => {
         beforeEach(() => {
+            // had to set the viewport in beforeEach because otherwise it keeps being reset between runs
             cy.viewport(1280, 768)
             cy.visit('http://www.growthengineering.co.uk/growth-engineering-jobs/')
         })
