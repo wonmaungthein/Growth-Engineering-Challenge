@@ -11,7 +11,7 @@ describe('Contact form validation', () => {
         })
 
         it('should validate if the first name is empty', () => {
-            cy.get('input[name="firstname"]').first()
+            cy.get(firstName).first()
                 .focus().blur()
 
             cy.get('.hs-error-msgs label').contains('Please complete this required field.')
@@ -19,8 +19,8 @@ describe('Contact form validation', () => {
 
         })
         it('should validate if the last name is empty', () => {
-            cy.get('input[name="firstname"]').first().type('Won')
-            cy.get('input[name="lastname"]').first().focus().blur()
+            cy.get(firstName).first().type('Won')
+            cy.get(lastName).first().focus().blur()
 
             cy.get('.hs_lastname label')
                 .should('contain', 'Please complete this required field.')
@@ -29,9 +29,9 @@ describe('Contact form validation', () => {
 
     describe('Email input validation', () => {
         it('should check if email input is empty', () => {
-            cy.get('input[name="firstname"]').first().type('Won')
-            cy.get('input[name="lastname"]').first().type('Maung')
-            cy.get('input[name="email"]').first().clear().focus().blur()
+            cy.get(firstName).first().type('Won')
+            cy.get(lastName).first().type('Maung')
+            cy.get(Email).first().clear().focus().blur()
 
             cy.get('.hs_email .hs-error-msgs label').contains('Please complete this required field.')
                 .should('be.visible')
@@ -46,9 +46,9 @@ describe('Contact form validation', () => {
 
 
         it('should check if email input is valid', () => {
-            cy.get('input[name="firstname"]').first().type('Won').blur()
-            cy.get('input[name="lastname"]').first().type('Maung').blur()
-            cy.get('input[name="email"]').first().type('wrongemail').blur()
+            cy.get(firstName).first().type('Won').blur()
+            cy.get(lastName).first().type('Maung').blur()
+            cy.get(Email).first().type('wrongemail').blur()
 
             cy.get('.hs_email label')
                 .should('contain', 'Email must be formatted correctly.')
@@ -72,4 +72,7 @@ describe('Contact form validation', () => {
                 .should('contain', 'Please complete all required fields.')
         })
     })
+    const firstName = 'input[name = "firstname"]'
+    const lastName = 'input[name="lastname"]'
+    const Email = 'input[name="email"]'
 })
